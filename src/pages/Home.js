@@ -18,14 +18,14 @@ export function Home() {
   return (
     <Box>
       <Hero />
-      <Grid templateColumns={['repeat(1fr)', 'repeat(3, 1fr)']}>
+      <Grid templateColumns={['repeat(1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}>
         {
           products.map(product => (
             <Link to={`/products/${product.handle}`} key={product.id}>
               <Box _hover={{ opacity: '80%' }} textAlign="center" position="relative">
                 <Image src={product.images[0].src} />
-                <Text>{product.title}</Text>
-                <Text>${product.variants[0].price.amount}</Text>
+                <Text fontWeight="bold">{product.title}</Text>
+                <Text color="gray.500">${product.variants[0].price.amount}</Text>
               </Box>
             </Link>
           ))
