@@ -4,6 +4,7 @@ import { Box, Grid, Text, Image } from "@chakra-ui/react"
 import { ShopContext } from '../contexts/shopContext'
 import { Hero } from '../components/Hero';
 import { ImageWithText } from '../components/ImageWithText';
+import { RichText } from '../components/RichText';
 
 export function Home() {
   const { handleFetchAllProducts, products } = useContext(ShopContext);
@@ -18,6 +19,7 @@ export function Home() {
   return (
     <Box>
       <Hero />
+      <RichText heading="Odio Elementum" text="Egestas Sagittis Ipsum Habitant At Diam"/>
       <Grid templateColumns={['repeat(1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}>
         {
           products.map(product => (
@@ -31,6 +33,7 @@ export function Home() {
           ))
         }
       </Grid>
+      <RichText heading="Lorem ipsum" />
       <ImageWithText
         button
         image="https://cdn.shopify.com/s/files/1/2248/5209/files/banner-dog-2.jpg"
